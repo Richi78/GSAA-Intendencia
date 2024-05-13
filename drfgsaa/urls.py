@@ -17,6 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# views
+from intendencia.views.login_view import Login, Profile
+from intendencia.views.register_view import Registar
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+
+    path("register/", Registar.as_view(), name="register"),
+    path("login/", Login.as_view(), name="login"),
+    path("profile/", Profile.as_view(), name="perfil")
 ]
