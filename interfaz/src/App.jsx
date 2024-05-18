@@ -4,6 +4,7 @@ import { Admin, Analytics, Dashboard, Home } from "./pages"
 import Test1 from "./Components/Test1"
 import Login from "./Components/Login"
 import Materiales from "./pages/Materiales"
+import FormularioRegist from "./pages/FormularioRegist"
 
 function App () {
 
@@ -12,6 +13,7 @@ function App () {
       {/* <Navigation /> */}
       <Routes>
         <Route index element={<Login />}/>
+        <Route path="/registrar" element={<FormularioRegist />}/>
         <Route path="/materiales" element={<Materiales/>}/>
         <Route path="/landing" element={<Landing />}/>
         <Route path="/home" element={<Home />}/>

@@ -1,9 +1,30 @@
 .material-card-conteiner{
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
     border: 1px solid black;
     border-radius: 15px;
-    width: 50rem;
-    padding: 1rem;
+    width: 40vw;
+    /* padding: 1rem; */
+    gap: 1rem;
+}
+
+.material-card-info {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 32vw;
+}
+
+.material-card-edit {
+    display: flex;
+    width: 6vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 10vh;
+    border-left: 1px solid black;
 }
 
 .material-card-section2 {
@@ -17,9 +38,33 @@
     margin: 1rem 0;
 }
 
+.btn-edit {
+    background-color: #09f;
+    color: antiquewhite;
+}
+
+.btn-delete {
+    background-color: red;
+    color: antiquewhite;
+}
+
 @media screen and (max-width: 750px) {
     .material-card-conteiner{
-        width: 90%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .material-card-info {
+        width: 100%;
+    }
+
+    .material-card-edit {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-left: none;
+        margin-bottom: 1rem;
     }
     
 }

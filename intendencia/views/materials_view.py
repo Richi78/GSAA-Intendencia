@@ -12,3 +12,6 @@ class GetMaterial(APIView):
         material = Material.objects.all()
         serializer = MaterialSerializer(material, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def post(self, request):
+        pass

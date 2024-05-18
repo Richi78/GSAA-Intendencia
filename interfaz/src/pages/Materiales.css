@@ -7,6 +7,7 @@
 .materiales-title{
     display: flex;
     justify-content: center;
+    gap: 1rem;
 }
 
 .material-list {
@@ -18,4 +19,8 @@
 
 .material-element {
     margin: 1rem;
+}
+
+.add-material {
+    background-color: rgb(99, 232, 99);
 }
