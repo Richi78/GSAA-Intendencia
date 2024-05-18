@@ -9,8 +9,17 @@
 .material-card-section2 {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 5px 0px;
 }
 
 .material-obs {
     margin: 1rem 0;
+}
+
+@media screen and (max-width: 750px) {
+    .material-card-conteiner{
+        width: 90%;
+    }
+    
 }
