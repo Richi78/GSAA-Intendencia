@@ -1,0 +1,21 @@
+.materiales-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.materiales-title{
+    display: flex;
+    justify-content: center;
+}
+
+.material-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-element {
+    margin: 1rem;
+}

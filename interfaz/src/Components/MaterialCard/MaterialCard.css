@@ -1,0 +1,16 @@
+.material-card-conteiner{
+    position: relative;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 50rem;
+    padding: 1rem;
+}
+
+.material-card-section2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.material-obs {
+    margin: 1rem 0;
+}

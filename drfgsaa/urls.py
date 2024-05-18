@@ -20,11 +20,13 @@ from django.urls import path
 # views
 from intendencia.views.login_view import Login, Profile
 from intendencia.views.register_view import Registar
+from intendencia.views.materials_view import GetMaterial
 
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    path("register/", Registar.as_view(), name="register"),
-    path("login/", Login.as_view(), name="login"),
-    path("profile/", Profile.as_view(), name="perfil")
+    path("api/register/", Registar.as_view(), name="register"),
+    path("api/login/", Login.as_view(), name="login"),
+    path("api/profile/", Profile.as_view(), name="perfil"),
+    path("api/material/", GetMaterial.as_view(), name="material")
 ]
