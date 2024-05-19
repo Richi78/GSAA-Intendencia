@@ -21,12 +21,23 @@
     gap: 1rem;
 }
 
+.form-element-error {
+    grid-column: 2;
+    color: red;
+    font-size: small;
+}
+
 .add-container label{
     text-align: right;
 }
 
 .add-container input{
     height: 25px;
+    padding-left: 5px;
+}
+
+.add-container select{
+    height: 30px;
     padding-left: 5px;
 }
 

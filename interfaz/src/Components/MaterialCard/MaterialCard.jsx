@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './MaterialCard.css'
+import { useNavigate } from 'react-router-dom'
 
 const MaterialCard = ( {
       estado,
@@ -10,8 +11,19 @@ const MaterialCard = ( {
       ubicacion,
       ultimaActividad
     } ) => {
-  
+
+  const navigate = useNavigate()
+  const [mensajito,setMensajito] = useState(false)
+  const toEdit = () => {
+    navigate(`/editar/${id}`)
+  }
+
+  const toDelete = () => {
+    setMensajito(true)
+  }
+
   return (
+    <>
     <div key={id} className='material-card-conteiner'>
       <div className='material-card-info'>
         <h2>{material}</h2>
@@ -31,10 +43,24 @@ const MaterialCard = ( {
         </div>
       </div>
       <div className='material-card-edit'>
-        <button className='btn btn-edit'>Editar</button>
-        <button className='btn btn-delete'>Eliminar</button>
+        <button 
+          className='btn btn-edit'
+          onClick={toEdit}
+        >
+          Editar
+        </button>
+        <button 
+          className='btn btn-delete'
+          onClick={toDelete}
+        >
+          Eliminar
+        </button>
       </div>
     </div>
+    {
+      mensajito ? <div className='mensajito'>Solicitar a Richi la eliminación</div> : ""
+    }
+    </>
   )
 }
 

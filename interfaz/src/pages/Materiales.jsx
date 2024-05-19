@@ -3,9 +3,11 @@ import { getMaterial } from "../api/intendenciaApi";
 import MaterialCard from '../Components/MaterialCard/MaterialCard';
 import { FaPlus } from "react-icons/fa";
 import './Materiales.css'
+import { useNavigate } from 'react-router-dom';
 
 const Materiales = () => {
   
+  const navigate = useNavigate();
   const [material, setMaterial] = useState([])
 
   useEffect(()=> {
@@ -23,7 +25,12 @@ const Materiales = () => {
       <div className='page materiales-container'>
         <div className='materiales-title'>
           <h1>Materiales</h1>
-          <button className='btn add-material'> <FaPlus /> </button>
+          <button 
+            className='btn add-material'
+            onClick={() => navigate('/registrar')}
+          > 
+            <FaPlus /> 
+          </button>
         </div>
           <div className='material-list'>
             {
