@@ -1,0 +1,12 @@
+{
+  "name": "gsaa-intendencia",
+  "version": "1.0.0",
+  "description": "Sistema gestor de materiales",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

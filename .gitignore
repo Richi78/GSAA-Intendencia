@@ -1,5 +1,7 @@
 /venv
 .env
 credenciales.txt
+*__pycache__/
+
 db.sqlite3
 __pycache__

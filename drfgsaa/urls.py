@@ -17,6 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# views
+from intendencia.views.login_view import Login, Profile
+from intendencia.views.register_view import Registar
+from intendencia.views.materials_view import GetMaterial, GetMaterialById
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+
+    path("api/register/", Registar.as_view(), name="register"),
+    path("api/login/", Login.as_view(), name="login"),
+    path("api/profile/", Profile.as_view(), name="perfil"),
+    path("api/material/", GetMaterial.as_view(), name="material"),
+    path("api/editar/<int:id_material>", GetMaterialById.as_view(), name='editar')
 ]
