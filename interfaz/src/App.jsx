@@ -6,6 +6,7 @@ import EditarMaterial from "./pages/EditarMaterial"
 import { useUsuarioStore } from "./store/Logeado"
 import { ProtectedRoute } from "./Components/ProtectedRoute/ProtectedRoute"
 import Navbar from "./Components/Navbar/Navbar"
+import Default from "./pages/Default"
 
 
 function App () {
@@ -23,6 +24,7 @@ function App () {
           <Route path="/editar/:id_material" element={<EditarMaterial />} />
           <Route path="/materiales" element={<Materiales/>}/>
         </Route>
+        <Route path="/*" element={<Default />}/>
       </Routes>
     </BrowserRouter>
   )
