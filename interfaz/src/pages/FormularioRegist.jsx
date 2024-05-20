@@ -27,7 +27,6 @@ const FormularioRegist = () => {
     console.log(data);
     const res = createMaterial(data);
     res.then(navigate('/materiales'));
-    // reset()
   })
 
   return (

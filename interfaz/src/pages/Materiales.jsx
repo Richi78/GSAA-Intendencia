@@ -5,6 +5,9 @@ import { FaPlus } from "react-icons/fa";
 import './Materiales.css'
 import { useNavigate } from 'react-router-dom';
 
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+
 const Materiales = () => {
   
   const navigate = useNavigate();
@@ -14,12 +17,16 @@ const Materiales = () => {
     const get = getMaterial()
     get.then((data) => {
       setMaterial(data.data)
-      console.log(data.data)
     })
   },[])
 
   if (material.length===0) {
-    return <div>Cargandin</div>
+    // return <div>Cargandin</div>
+    return (
+      <Box sx={{ display: 'flex', justifyContent:'center', alignItems:'center', height:'100vh'}}>
+        <CircularProgress />
+      </Box>
+    );
   } else if (material.length>0){
     return (
       <div className='page materiales-container'>

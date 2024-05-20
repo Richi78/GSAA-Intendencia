@@ -11,19 +11,18 @@ from ..serializers.user_serializer import UserSerializer
 
 class Login(APIView):
     def post(self, request):
-
-        user = get_object_or_404(User, username=request.data['username'])
+        user = get_object_or_404(User, username=request.data['data']['usuario'])
 
         # check_password compara string con un dato ya encriptado
-        if not user.check_password(request.data['password']):
+        if not user.check_password(request.data['data']['password']):
             return Response({'error': 'Invalid password'}, 
                             status=status.HTTP_400_BAD_REQUEST)
         
         token,created = Token.objects.get_or_create(user=user)
 
         serializer = UserSerializer(instance=user)
-
-        return Response({"token": token.key, "user": serializer.data},
+        # print(serializer.data)
+        return Response({"token": token.key, "user": serializer.data['username']},
                          status=status.HTTP_200_OK) 
 
 class Profile(APIView):

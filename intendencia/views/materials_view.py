@@ -9,6 +9,8 @@ from ..models import Material
 from ..serializers.material_serializer import MaterialSerializer
 
 class GetMaterial(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         material = Material.objects.all()
         serializer = MaterialSerializer(material, many=True)
@@ -31,6 +33,8 @@ class GetMaterial(APIView):
         return Response({"mensaje": "exitoso"}, status=status.HTTP_200_OK)
 
 class GetMaterialById(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, id_material):
         material = get_object_or_404(Material, id=id_material)
         serializer = MaterialSerializer(material)

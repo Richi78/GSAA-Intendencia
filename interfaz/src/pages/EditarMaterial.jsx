@@ -4,6 +4,9 @@ import { editarMaterialById, getMaterialById } from '../api/intendenciaApi'
 import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+
 const EditarMaterial = () => {
 
     const id = useParams();
@@ -24,7 +27,6 @@ const EditarMaterial = () => {
     });
   
     const onSubmit = handleSubmit( (data) => {
-      console.log(data);
       const res = editarMaterialById(id.id_material, data);
       res.then( (x) => console.log(x))
       res.catch((error)=>console.log(error))
@@ -45,7 +47,12 @@ const EditarMaterial = () => {
     }, [])
 
     if (!datos){
-        return <div>Cargandin</div>
+        // return <div>Cargandin</div>
+        return (
+          <Box sx={{ display: 'flex', justifyContent:'center', alignItems:'center', height:'100vh'}}>
+            <CircularProgress />
+          </Box>
+        );
     } else{
         return (
           <div className='page'>
