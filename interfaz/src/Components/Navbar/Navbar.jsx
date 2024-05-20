@@ -1,14 +1,16 @@
 import React from 'react'
 import './Navbar.css'
 import { useUsuarioStore } from '../../store/Logeado'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
   const {token} = useUsuarioStore()
+  const navigate = useNavigate()
 
   const onClick = () => {
     window.localStorage.clear()
-    window.location.reload()
+    navigate('/login')
   }
 
   return (
