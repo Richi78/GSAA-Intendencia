@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
-  const {token} = useUsuarioStore()
+  const {token, setToken} = useUsuarioStore()
   const navigate = useNavigate()
 
   const onClick = () => {
-    window.localStorage.clear()
-    navigate('/login')
+    window.localStorage.removeItem('loggedUser');
+    setToken('');
+    navigate('/login');
   }
 
   return (
