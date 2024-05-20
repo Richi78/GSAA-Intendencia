@@ -12,7 +12,7 @@ import { getToken } from '../store/Logeado';
 export const getMaterial = async () => {
   try {
     const res = await axios({
-      url: 'http://localhost:8000/api/material/',
+      url: 'https://gsaa-intendencia.onrender.com/api/material/',
       method: 'GET',
       headers: {
         'Authorization': `Token ${getToken()}`
@@ -27,7 +27,7 @@ export const getMaterial = async () => {
 export const createMaterial = async (data) => {
   try{
     const res = await axios({
-      url: 'http://localhost:8000/api/material/',
+      url: 'https://gsaa-intendencia.onrender.com/api/material/',
       method: 'POST',
       data: {data},
       headers: {
@@ -43,7 +43,7 @@ export const createMaterial = async (data) => {
 export const getMaterialById = async (id_material) => {
   try {
     const res = await axios({
-      url: `http://localhost:8000/api/editar/${id_material}`,
+      url: `https://gsaa-intendencia.onrender.com/api/editar/${id_material}`,
       method: 'GET',
       headers: {
         'Authorization': `Token ${getToken()}`
@@ -58,7 +58,7 @@ export const getMaterialById = async (id_material) => {
 export const editarMaterialById = async (id_material, data) => {
   try {
     const res = await axios({
-      url: `http://localhost:8000/api/editar/${id_material}`,
+      url: `https://gsaa-intendencia.onrender.com/api/editar/${id_material}`,
       method: 'PUT',
       data: {data},
       headers: {
@@ -74,7 +74,7 @@ export const editarMaterialById = async (id_material, data) => {
 export const getTokenLogin = async (data) => {
   try {
     const res = await axios({
-      url: 'http://localhost:8000/api/login/',
+      url: 'https://gsaa-intendencia.onrender.com/api/login/',
       method: 'POST',
       data: {data},
     })
