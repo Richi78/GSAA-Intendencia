@@ -1,0 +1,46 @@
+.section {
+    position: relative;
+    height: calc(100vh - var(--navbar-height));
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+.default-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.default-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.default-right {
+    width: 100%;
+    height: 100%;
+}
+
+.default-right .image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../public/monos.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: contain; */
+}
+
+@media screen and (max-width: 750px) {
+    .section {
+        flex-direction: column;
+    }
+    
+    .default-right .image {
+        background-size: contain;
+    }
+
+}
