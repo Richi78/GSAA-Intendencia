@@ -5,6 +5,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from django.shortcuts import get_object_or_404
 
+import datetime
+
 from ..models import Material
 from ..serializers.material_serializer import MaterialSerializer
 
@@ -14,6 +16,12 @@ class GetMaterial(APIView):
     def get(self, request):
         material = Material.objects.all()
         serializer = MaterialSerializer(material, many=True)
+        for item in serializer.data:
+            if item['estado'] == 'B' : item['estado'] = "Bueno"
+            if item['estado'] == 'R' : item['estado'] = "Regular"
+            if item['estado'] == 'M' : item['estado'] = "Malo"
+            fecha = datetime.datetime.strptime(item['timestamp'], "%Y-%m-%dT%H:%M:%S.%fZ")
+            item['timestamp'] = f"{fecha.day}/{fecha.month}/{fecha.year}"
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     def post(self, request):
