@@ -4,6 +4,19 @@
     align-items: center;
 }
 
+.materiales-filtro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.materiales-filtro input {
+    height: 25px;
+    padding-left: 5px;
+}
+
 .materiales-title{
     display: flex;
     justify-content: center;
