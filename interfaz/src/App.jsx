@@ -7,6 +7,7 @@ import { useUsuarioStore } from "./store/Logeado";
 import { ProtectedRoute } from "./Components/ProtectedRoute/ProtectedRoute";
 import Navbar from "./Components/Navbar/Navbar";
 import Default from "./pages/Default";
+import MaterialCard from "./Components/MaterialCard/MaterialCard"
 
 function App() {
   const { token } = useUsuarioStore();
@@ -21,6 +22,7 @@ function App() {
           <Route path="/registrar" element={<FormularioRegist />} />
           <Route path="/editar/:id_material" element={<EditarMaterial />} />
           <Route path="/materiales" element={<Materiales />} />
+          <Route path="/detalle/:id_material" element={<MaterialCard />} />
         </Route>
         <Route path="/*" element={<Default />} />
       </Routes>
