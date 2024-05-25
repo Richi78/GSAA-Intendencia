@@ -29,3 +29,10 @@
     column-gap: 10px;
     
 }
+
+@media screen and (max-width: 750px) {
+    .mini-card-info {
+        display: flex;
+        flex-direction: column;
+    }
+}
