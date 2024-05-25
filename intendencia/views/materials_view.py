@@ -46,7 +46,13 @@ class GetMaterialById(APIView):
     def get(self, request, id_material):
         material = get_object_or_404(Material, id=id_material)
         serializer = MaterialSerializer(material)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        x = serializer.data
+        if x['estado'] == 'B' : x['estado'] = "Bueno"
+        if x['estado'] == 'R' : x['estado'] = "Regular"
+        if x['estado'] == 'M' : x['estado'] = "Malo"
+        fecha = datetime.datetime.strptime(x['timestamp'], "%Y-%m-%dT%H:%M:%S.%fZ")
+        x['timestamp'] = f"{fecha.day}/{fecha.month}/{fecha.year}"
+        return Response(x, status=status.HTTP_200_OK)
     
     def put(self, request, id_material):
         required_fields = ['nombre', 'estado', 'observaciones', 'ultimaActividad', 'ubicacion']

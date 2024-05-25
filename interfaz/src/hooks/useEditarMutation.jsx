@@ -3,7 +3,7 @@ import { editarMaterialById, getMaterialById } from "../api/intendenciaApi";
 import { useNavigate } from "react-router-dom";
 
 export const useMaterialByID = (id) => {
-  const { data, isLoading, isError, isSuccess } = useQuery({
+  const { data, isLoading, isError, isSuccess, isFetching } = useQuery({
     queryKey: ["materialByID"],
     queryFn: async () => await getMaterialById(id),
     refetchOnWindowFocus: false,
@@ -13,6 +13,7 @@ export const useMaterialByID = (id) => {
     isLoading,
     isError,
     isSuccess,
+    isFetching,
   };
 };
 
@@ -23,6 +24,7 @@ export const useEditMaterialByIDMutation = () => {
     onSuccess: () => {
       navigate("/materiales");
     },
+    refetchOnWindowFocus: false,
   });
   return {
     mutate,

@@ -1,0 +1,31 @@
+.mini-card-container {
+    position: relative;
+    border: 1px solid black;
+    height: fit-content;
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.mini-card-container:hover {
+    box-shadow: 0 0 10px 1px var(--gris);
+}
+
+.btn-detalles {
+    background-color: rgb(92, 178, 227);
+}
+
+.btn-detalles:hover {
+    cursor: pointer;
+}
+
+.mini-card-info {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    
+}

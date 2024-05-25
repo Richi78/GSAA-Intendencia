@@ -1,4 +1,3 @@
-import React from 'react'
 import './Navbar.css'
 import { useUsuarioStore } from '../../store/Logeado'
 import { useNavigate } from 'react-router-dom'

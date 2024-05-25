@@ -1,15 +1,19 @@
-import MaterialCard from "../Components/MaterialCard/MaterialCard";
 import { FaPlus } from "react-icons/fa";
 import "./Materiales.css";
 import { useNavigate } from "react-router-dom";
 
 import { Loading } from "../Components/Loading";
 import { useMateriales } from "../hooks/useMateriales";
+import MiniMaterialCard from "../Components/MiniMaterialCard/MiniMaterialCard";
 
 const Materiales = () => {
   const navigate = useNavigate();
 
   const { data, isError, isLoading, isSuccess } = useMateriales();
+
+  function ordenAlfabetico(lista){
+    return lista.sort((a, b) => a.material.localeCompare(b.material))
+  }
 
   return (
     <>
@@ -28,10 +32,10 @@ const Materiales = () => {
           </div>
           <div className="material-list">
             {data.data.length > 0 ? (
-              data.data.map((mat, index) => {
+              ordenAlfabetico(data.data).map((mat, index) => {
                 return (
                   <div key={index} className="material-element">
-                    <MaterialCard
+                    <MiniMaterialCard
                       estado={mat.estado}
                       id={mat.id}
                       material={mat.material}
